@@ -27,10 +27,22 @@ function App() {
 
 console.log(cards, turns)
 
+
   return (
     <div className="App">
       <h1>Magic Math</h1>
       <button onClick={shuffleCards}>New Game</button>
+
+      <div className="card-grid">
+        {cards.map(c => (
+          <div className="card" key={c.id}>
+            <div>
+              <img className="front" src={c.src} alt="card front" />
+              <img className="back" src="/img/cover.png" alt="card back" />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
